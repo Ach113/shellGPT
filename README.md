@@ -24,7 +24,7 @@ $env:OPENAI_API_KEY = "your key here"
 ```
 Now you can interface with chatGPT directly from the terminal:
 ```
-> shellGPT
+> shellgpt
     $ hello there!
     Hello! How can I assist you today?
 ```
