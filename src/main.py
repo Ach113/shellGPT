@@ -8,8 +8,7 @@ openai.api_key = os.environ['OPENAI_API_KEY']
 def parse_arguments():
     parser = argparse.ArgumentParser(
         prog='shellGPT',
-        description='chatGPT interface inside PowerShell terminal',
-
+        description='chatGPT interface inside terminal',
     )
 
     available_models = openai.Model.list()['data']
@@ -21,7 +20,7 @@ def parse_arguments():
     return parser.parse_args()
 
 
-if __name__ == '__main__':
+def main():
     args = parse_arguments()
 
     while True:
@@ -33,3 +32,7 @@ if __name__ == '__main__':
             ]
         )
         print(response['choices'][0]['message']['content'].strip('\n'))
+
+
+if __name__ == '__main__':
+    main()
