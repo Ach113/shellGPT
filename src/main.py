@@ -25,6 +25,8 @@ def main():
 
     while True:
         prompt = input('$ ')
+        if prompt == 'q':
+            exit(0)
         response = openai.ChatCompletion.create(
             model=args.m,
             messages=[
