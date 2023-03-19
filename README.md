@@ -6,12 +6,6 @@ Most bare-bones interface for chatGPT inside terminal.
 git clone https://github.com/Ach113/shellGPT
 pip install .
 ```
-Now you can interface with chatGPT directly from the terminal:
-```
-$ shellGPT
-    $ hello there!
-    Hello! How can I assist you today?
-```
 
 ## Usage:
 ```
@@ -28,6 +22,13 @@ Before running, make sure to set the value of environment variable
 ```
 $env:OPENAI_API_KEY = "your key here"
 ```
+Now you can interface with chatGPT directly from the terminal:
+```
+> shellGPT
+    $ hello there!
+    Hello! How can I assist you today?
+```
+
 ## Why?
 I mostly use PyCharm for development, and I find it very convenient
 to be able to use chatGPT within the PyCharm terminal.
