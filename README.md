@@ -1,6 +1,18 @@
 ## shellGPT
 Most bare-bones interface for chatGPT inside terminal.
 
+## Install:
+```
+git clone https://github.com/Ach113/shellGPT
+pip install .
+```
+Now you can interface with chatGPT directly from the terminal:
+```
+$ shellGPT
+    $ hello there!
+    Hello! How can I assist you today?
+```
+
 ## Usage:
 ```
 usage: shellGPT [-h] [-m model]
@@ -19,3 +31,7 @@ $env:OPENAI_API_KEY = "your key here"
 ## Why?
 I mostly use PyCharm for development, and I find it very convenient
 to be able to use chatGPT within the PyCharm terminal.
+
+## Planned features
+1. add option to log messages by specifying `--log` 
+2. load logged messages to the model
