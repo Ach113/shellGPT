@@ -2,6 +2,8 @@ import os
 import openai
 import argparse
 
+import util
+
 openai.api_key = os.environ['OPENAI_API_KEY']
 
 
@@ -16,16 +18,20 @@ def parse_arguments():
     parser.add_argument('-m', default='gpt-3.5-turbo', metavar='model',
                         choices=available_model_names,
                         help='which chat model to use, default `gpt-3.5-turbo`')
-
+    parser.add_argument('-l', '--log', type=bool, default=False, metavar='log',
+                        action=argparse.BooleanOptionalAction,
+                        help='option to turn on conversation logging')
     return parser.parse_args()
 
 
 def main():
     args = parse_arguments()
+    util.clean()
 
     while True:
         prompt = input('$ ')
         if prompt == 'q':
+            util.clean()
             exit(0)
         response = openai.ChatCompletion.create(
             model=args.m,
@@ -33,7 +39,11 @@ def main():
                 {'role': 'user', 'content': prompt}
             ]
         )
-        print(response['choices'][0]['message']['content'].strip('\n'))
+
+        response_text = response['choices'][0]['message']['content'].strip('\n')
+        if args.log:
+            util.log_conv(prompt, response_text)
+        print(response_text)
 
 
 if __name__ == '__main__':
