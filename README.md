@@ -49,4 +49,4 @@ I mostly use PyCharm for development, and I find it very convenient
 to be able to use chatGPT within the PyCharm terminal.
 
 ## Planned features
-1. add a way to load logged messages into the model
+1. add a way to load logged conversations into the model
