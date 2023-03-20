@@ -41,7 +41,7 @@ def log_conv(prompt: str, response: str, log: bool,
     # if file spath is specified just log the current prompt/response
     if redirect_file_path:
         with open(redirect_file_path, mode) as fp:
-            fp.write(f'$ {prompt}\n{response}\n')
+            fp.write(f'\n$ {prompt}\n{response}\n')
 
     if log:
         date_str = datetime.today().strftime('%Y-%m-%d %H-%M-%S')
@@ -49,7 +49,7 @@ def log_conv(prompt: str, response: str, log: bool,
         if ENV_VAR_NAME in os.environ:
             file_path = os.environ[ENV_VAR_NAME]
             with open(file_path, 'a+') as fp:
-                fp.write(f'$ {prompt}\n{response}\n')
+                fp.write(f'\n$ {prompt}\n{response}\n')
         else:
             # if not set a new one and call logging function anew
             os.environ[ENV_VAR_NAME] = os.path.join('..', 'logs', fr'log_{date_str}.txt')
