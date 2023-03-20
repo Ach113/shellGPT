@@ -1,4 +1,5 @@
 /.idea/
 /build/
 /shellGPT.egg-info/
+/src/shellGPT.egg-info/
 *.txt
