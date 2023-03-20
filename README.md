@@ -4,6 +4,7 @@ Most bare-bones interface for chatGPT inside terminal.
 ## Install:
 ```
 git clone https://github.com/Ach113/shellGPT
+cd shellGPT
 pip install .
 ```
 
