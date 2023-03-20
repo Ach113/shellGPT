@@ -1,4 +1,4 @@
 /.idea/
 /build/
 /shellGPT.egg-info/
-/*.txt/
+*.txt
