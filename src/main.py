@@ -30,9 +30,15 @@ def main():
 
     while True:
         prompt = input('$ ')
+        file_path, mode = '', ''
+
         if prompt == 'q':
             util.clean()
             exit(0)
+
+        if '>' in prompt:
+            prompt, file_path, mode = util.process_redirect(prompt)
+
         response = openai.ChatCompletion.create(
             model=args.m,
             messages=[
@@ -41,8 +47,9 @@ def main():
         )
 
         response_text = response['choices'][0]['message']['content'].strip('\n')
-        if args.log:
-            util.log_conv(prompt, response_text)
+
+        if args.log or mode:
+            util.log_conv(prompt, response_text, args.log, file_path, mode)
         print(response_text)
 
 

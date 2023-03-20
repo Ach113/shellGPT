@@ -31,6 +31,18 @@ Now you can interface with chatGPT directly from the terminal:
     $ hello there!
     Hello! How can I assist you today?
 ```
+You can enable logging by indicating flag `-l` to store your conversations 
+with the chatbot for the current section.
+
+Alternatively, you can use redirect operators `>` and `>>` to redirect bot's 
+response to a specified filename:
+```
+$ Whats the meaning of life? > answer.txt
+```
+`>` indicates write mode (a new file will be created). \
+`>>` indicates append mode, query,
+along with the response will be appended to existing file.
+
 
 ## Why?
 I mostly use PyCharm for development, and I find it very convenient
@@ -38,4 +50,3 @@ to be able to use chatGPT within the PyCharm terminal.
 
 ## Planned features
 1. add a way to load logged messages into the model
-2. allow storing specific queries/answers using `>` operator
