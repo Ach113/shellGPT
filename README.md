@@ -10,13 +10,15 @@ pip install .
 
 ## Usage:
 ```
-usage: shellGPT [-h] [-m model]
+usage: shellGPT [-h] [-m model] [-l | --log | --no-log]
 
 chatGPT interface inside PowerShell terminal
 
 options:
-  -h, --help  show this help message and exit
-  -m, --model    which chat model to use, default `gpt-3.5-turbo`
+  -h, --help           show this help message and exit       
+  -m model             which chat model to use, default `gpt-3.5-turbo`
+  -l, --log, --no-log  option to turn on message logging (default: False)
+
 ```
 Before running, make sure to set the value of environment variable
 `OPENAI_API_KEY` to your private API key.
@@ -35,5 +37,5 @@ I mostly use PyCharm for development, and I find it very convenient
 to be able to use chatGPT within the PyCharm terminal.
 
 ## Planned features
-1. add option to log messages by specifying `--log` 
-2. load logged messages to the model
+1. add a way to load logged messages into the model
+2. allow storing specific queries/answers using `>` operator
