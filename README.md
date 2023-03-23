@@ -48,3 +48,4 @@ to be able to use chatGPT within the PyCharm terminal.
 
 ## Planned features
 1. add a way to load logged conversations into the model
+2. add a way to pass files to the chatbot
