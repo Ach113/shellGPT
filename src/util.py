@@ -26,6 +26,18 @@ def process_redirect(prompt: str) -> Tuple[str, str, str]:
     return prompt.strip(' '), file_path.strip(' '), mode
 
 
+def process_file_input(prompt: str) -> str:
+    prompt, file_path = prompt.split('<')
+    file_path = file_path.strip(' ')
+    if not os.path.exists(file_path):
+        print(f'Error: file `{file_path}` not found')
+
+    with open(file_path, 'r') as fp:
+        file_content = fp.read()
+
+    return prompt + file_content
+
+
 def log_conv(prompt: str, response: str, log: bool,
              redirect_file_path: Optional[str] = '', mode: Optional[str] = ''):
     """
@@ -35,7 +47,7 @@ def log_conv(prompt: str, response: str, log: bool,
     :param redirect_file_path: parameter which is specified during `>` or `>>` command from the user
     :param mode: 'w' for `>`, `a` for `>>`
 
-    Logs the conversation between user and the model. Save path is specified in `config.py`
+    Logs the conversation between user and the model.
     """
 
     # if file spath is specified just log the current prompt/response

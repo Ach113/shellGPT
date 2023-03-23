@@ -39,6 +39,9 @@ def main():
         if '>' in prompt:
             prompt, file_path, mode = util.process_redirect(prompt)
 
+        if '<' in prompt:
+            prompt = util.process_file_input(prompt)
+
         response = openai.ChatCompletion.create(
             model=args.m,
             messages=[
