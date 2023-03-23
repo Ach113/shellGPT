@@ -1,5 +1,7 @@
 ## shellGPT
-Most bare-bones interface for chatGPT inside terminal.
+as described by itself:
+
+![about](https://i.imgur.com/Vbgkuv2.png)
 
 ## Install:
 ```
@@ -39,6 +41,11 @@ $ Whats the meaning of life? > answer.txt
 `>` indicates write mode (a new file will be created). \
 `>>` indicates append mode (query, along with the response will 
 be appended to existing file).
+
+You can also use `<` operator to input text files into the conversation:
+```
+$ can you rewrite this in more formal language? < email.txt
+```
 
 Alternatively, you can enable logging by indicating flag `-l` to store all your conversations 
 with the chatbot for the current session. 
